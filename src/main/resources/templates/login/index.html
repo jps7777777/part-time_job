@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        function get_name() {
+            $.post("/lg/test", {}, function (data) {
+                console.log(data);
+                var user = data.data;
+                $("#b_n").html(user.name);
+                $("#b_a").html(user.age);
+                $("#b_g").html(user.gender);
+                $("#b_e").html(user.email);
+            });
+
+
+        }
+    </script>
+</head>
+<body>
+    <h2>登录index页面</h2>
+    <button onclick="get_name()">获取数据</button>
+    <br />
+    <b id="b_n"></b>
+    <p id="b_a"></p>
+    <p id="b_g"></p>
+    <p id="b_e"></p>
+</body>
+</html>

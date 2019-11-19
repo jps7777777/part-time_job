@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>login page</title>
+</head>
+<body>
+    <h2>this is login page.</h2>
+    <div th:Object="${user}">
+        <h3 th:text="*{name}"></h3>
+        <h3 th:text="*{age}"></h3>
+    </div>
+</body>
+</html>
